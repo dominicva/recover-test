@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import Button from './buttons/Button';
+import Container from './Container';
 
 export default function Header() {
   return (
     <header>
-      <div className="mx-auto flex max-w-5xl items-center justify-between p-6">
+      <Container className="flex items-center justify-between p-6">
         <Link href="/">
           <h1 className="text-2xl font-semibold text-purple-darker">Recover</h1>
         </Link>
@@ -26,7 +27,7 @@ export default function Header() {
             </li>
           </ul>
         </nav>
-      </div>
+      </Container>
     </header>
   );
 }
