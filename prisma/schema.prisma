@@ -1,0 +1,51 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 String          @id @default(uuid())
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+  email              String          @unique
+  password           String
+  name               String?
+  image              String?
+  substance_of_abuse String
+  date_of_sobriety   DateTime
+  journalEntries     JournalEntry[]
+  questionnaires     Questionnaire[]
+}
+
+model JournalEntry {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  content   String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Questionnaire {
+  id            String   @id @default(uuid())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  sleep_quality Int      @default(0) // 0-10 scale
+  motivation    Int      @default(0)
+  contentment   Int      @default(0)
+  arousal       Int      @default(0)
+  anger         Int      @default(0)
+  sadness       Int      @default(0)
+  frustration   Int      @default(0)
+  wakefulness   Int      @default(0)
+  concentration Int      @default(0)
+  userId        String
+  user          User     @relation(fields: [userId], references: [id])
+}
