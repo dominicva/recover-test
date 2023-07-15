@@ -1,4 +1,5 @@
 import { cva, VariantProps } from 'class-variance-authority';
+import { MouseEventHandler } from 'react';
 
 const buttonClasses = cva(
   [
@@ -42,7 +43,7 @@ export interface ButtonProps extends VariantProps<typeof buttonClasses> {
   className?: string;
   disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
-  onClick?: () => void;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export default function Button({

@@ -1,14 +1,12 @@
+import type { BaseComponentProps } from '@/types';
+
 export default function Card({
   as: Component = 'div',
   className,
   children,
-}: {
-  as?: React.ElementType;
-  className?: string;
-  children: React.ReactNode;
-}) {
+}: BaseComponentProps) {
   return (
-    <Component className={`rounded-lg p-6 shadow-md bg-off-white ${className}`}>
+    <Component className={`rounded-lg bg-off-white p-6 shadow-md ${className}`}>
       {children}
     </Component>
   );
