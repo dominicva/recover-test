@@ -4,7 +4,7 @@ import Button from './buttons/Button';
 export default function Header() {
   return (
     <header>
-      <div className="flex items-center justify-between p-6">
+      <div className="mx-auto flex max-w-5xl items-center justify-between p-6">
         <Link href="/">
           <h1 className="text-2xl font-semibold text-purple-darker">Recover</h1>
         </Link>
