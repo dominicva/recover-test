@@ -5,7 +5,7 @@ import Container from './Container';
 export default function Header() {
   return (
     <header>
-      <Container className="flex items-center justify-between p-6">
+      <Container className="flex items-center justify-between">
         <Link href="/">
           <h1 className="text-2xl font-semibold text-purple-darker">Recover</h1>
         </Link>
