@@ -10,7 +10,7 @@ export default function SectionContainer({
   children,
 }: SectionContainerProps) {
   return (
-    <Component className={`mx-auto max-w-5xl p-6 ${className}`}>
+    <Component className={`mx-auto max-w-5xl p-6 ${className ?? ''}`.trim()}>
       {children}
     </Component>
   );

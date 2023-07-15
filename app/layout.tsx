@@ -2,6 +2,7 @@ import './globals.css';
 import { Hanken_Grotesk } from 'next/font/google';
 import Header from '@/components/Header';
 import type { Metadata } from 'next';
+import { NextAuthProvider } from './providers';
 
 const hankenGrotesk = Hanken_Grotesk({ subsets: ['latin'] });
 
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={hankenGrotesk.className}>
-        <Header />
-        {children}
+        <NextAuthProvider>
+          <Header />
+          {children}
+        </NextAuthProvider>
       </body>
     </html>
   );

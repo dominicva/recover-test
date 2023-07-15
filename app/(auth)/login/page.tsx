@@ -1,7 +1,10 @@
+import Login from '@/components/auth/Login';
+
 export default function LoginPage() {
   return (
     <>
-      <h1>Login</h1>
+      <h2 className="text-center text-2xl">Login</h2>
+      <Login />
     </>
   );
 }

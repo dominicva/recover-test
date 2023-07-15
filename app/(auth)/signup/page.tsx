@@ -1,7 +1,10 @@
+import Signup from '@/components/auth/Signup';
+
 export default function SignupPage() {
   return (
     <>
-      <h1>Sign up</h1>
+      <h2 className="text-center text-2xl">Sign up</h2>
+      <Signup />
     </>
   );
 }
