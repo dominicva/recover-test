@@ -1,9 +1,10 @@
+import Link from 'next/link';
 import Container from '../Container';
 import { FlexCol } from '../Flex';
 import Button from '../buttons/Button';
 import Input from '../form/Input';
 import FormControl from '../form/FormControl';
-import Link from 'next/link';
+import GoogleSigninButton from '../buttons/GoogleSigninButton';
 import type { AuthFormProps } from '@/types';
 
 export default function AuthForm({
@@ -60,10 +61,11 @@ export default function AuthForm({
         <Button
           type="submit"
           size="large"
-          className="mx-auto mt-8 block w-11/12"
+          className="mx-auto mb-4 mt-8 block w-11/12"
         >
           {buttonText}
         </Button>
+        <GoogleSigninButton />
       </form>
       <p className="mt-4">
         {helperText}{' '}
