@@ -4,7 +4,7 @@ import Container from './Container';
 
 export default function Header() {
   return (
-    <header>
+    <header className="sticky top-0 bg-white">
       <Container className="flex items-center justify-between">
         <Link href="/">
           <h1 className="text-2xl font-semibold text-purple-darker">Recover</h1>

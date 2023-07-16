@@ -1,6 +1,6 @@
 import type { BaseComponentProps } from '@/types';
 
-export default function SectionContainer({
+export default function Container({
   as: Component = 'div',
   className,
   children,
